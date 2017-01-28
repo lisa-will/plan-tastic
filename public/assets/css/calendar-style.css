@@ -1,0 +1,14 @@
+/* FullCalendar Styles */ 
+
+.fc-unthemed td.fc-today{
+  background-color: #bce8f1;
+}
+.fc-widget-content{
+  border-color: rgba(0,0,0,.1);
+}    
+  
+#calendar
+{
+  width: 900px;
+  margin: 0 auto;
+}
