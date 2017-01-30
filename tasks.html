@@ -100,28 +100,27 @@
         <!--::::::::::::::::::::::::::
         TASKS -
         ::::::::::::::::::::::::::::::-->
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default" id="myTasks">
-      <div class="panel-heading">
-        <i class="fa fa-calendar fa-fw"></i> To Do List</div>
-        <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default" id="myTasks">
+              <div class="panel-heading">
+              <i class="fa fa-calendar fa-fw"></i> To Do List</div>
+              <div class="panel-body">
+                
+                
+                <input type="text" id="myInput" placeholder="Enter To Do">
+                <span onclick="newElement()" class="btn btn-sm btn-default" id="addBtn"> Add </span>
+                
+                <ul id="myTasksList">
+                  <li>Hit the gym</li>
+                  <li class="checked">Pay bills</li>
+                  <li>Meet George</li>
+                  <li>Buy eggs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
           
-            
-            <input type="text" id="myInput" placeholder="...">
-            <span onclick="newElement()" class="btn btn-sm btn-default" id="addBtn">Add Task</span>
-          
-          <ul id="myUL">
-            <li>Hit the gym</li>
-            <li class="checked">Pay bills</li>
-            <li>Meet George</li>
-            <li>Buy eggs</li>
-          </ul>
-          </div>
-          </div>
-          </div>
-
-        
           <!--::::::::::::::::::::::::::
           PANEL 1 - TODAY + TIME  // PULL TIME AND DATE // #today
           ::::::::::::::::::::::::::::::-->
@@ -260,6 +259,7 @@
     <script src="vendor/morrisjs/morris.min.js"></script>
     <script src="data/morris-data.js"></script>
     <!-- Custom Theme JavaScript -->
+    <script src="task.js"></script>
     <script src="admin.js"></script>
   </body>
 </html>
