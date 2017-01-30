@@ -1,1 +1,1 @@
-INSERT INTO cats (name) VALUES ('Meeses');
+-- INSERT INTO cats (name) VALUES ('Meeses');
