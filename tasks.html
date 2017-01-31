@@ -125,8 +125,8 @@
           PANEL 1 - TODAY + TIME  // PULL TIME AND DATE // #today
           ::::::::::::::::::::::::::::::-->
           <div class="row">
-            <div class="col-lg-2 col-md-4">
-              <div class="panel panel-default" id="today">
+            <div class="col-lg-4 col-md-6">
+              <div class="panel panel-default">
                 <div class="panel-heading">
                   <div class="row">
                     <div class="col-xs-3">
@@ -134,7 +134,8 @@
                     </div>
                     <div class="col-xs-9 text-right">
                       <div>TODAY IS</div>
-                      <div class="huge">1.28.17</div>
+                      <div class="huge" id="today"></div>
+                      <div class="large" id="time"></div>
                     </div>
                   </div>
                 </div>
@@ -146,12 +147,15 @@
                   </div>
                 </a>
               </div>
-            </div>
+              </div>
+
+           
             <!--:::::::::::::::::::::::::::::::::
             PANEL 3 - POSITIVE AFFRIMATIONS // PULL https://theysaidso.com/api/
             // #quotes // or #qod (QuoteOftheDay)
             :::::::::::::::::::::::::::::::::::::-->
-            <div class="col-lg-2 col-md-4">
+
+            <div class="col-lg-4 col-md-6">
               <div class="panel panel-default" id="quotes">
                 <div class="panel-heading">
                   <div class="row">
@@ -176,7 +180,7 @@
             <!--::::::::::::::::::::::::::::::::
             PANEL 4 - BULLHORN - REMINDERS // #reminders
             ::::::::::::::::::::::::::::::::::::-->
-            <div class="col-lg-2 col-md-4">
+            <div class="col-lg-4 col-md-6">
               <div class="panel panel-default" id="reminders">
                 <div class="panel-heading">
                   <div class="row">
@@ -198,7 +202,8 @@
                 </a>
               </div>
             </div>
-          </div>
+            </div>
+          
           <!--:::::::::::::::::::::::::
           CALENDAR // #myWeek
           :::::::::::::::::::::::::::::-->
@@ -261,7 +266,20 @@
     <!-- Custom Theme JavaScript -->
     <script src="task.js"></script>
     <script src="admin.js"></script>
-  </body>
-</html>
+
+    <!-- Moment js cdn --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script>
+
+ var NowMoment = moment();
+  
+  // display value of moment object in #displayMoment div
+  var eDisplayMoment = document.getElementById('today');
+  eDisplayMoment.innerHTML = NowMoment.format("MM.DD.YY");
+  var time = document.getElementById('time');
+  time.innerHTML = NowMoment.format("h:mm A");
+
+</script>
+
 </body>
 </html>

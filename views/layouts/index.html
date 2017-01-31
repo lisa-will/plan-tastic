@@ -21,6 +21,8 @@
 		<link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Lato|Pacifico|Roboto" rel="stylesheet">
+
+
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -257,7 +259,7 @@
 			::::::::::::::::::::::::::::::-->
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
-					<div class="panel panel-default" id="today">
+					<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="row">
 								<div class="col-xs-3">
@@ -265,7 +267,8 @@
 								</div>
 								<div class="col-xs-9 text-right">
 									<div>TODAY IS</div>
-									<div class="huge">1.28.17</div>
+									<div class="huge" id="today"></div>
+									<div class="large" id="time"></div>
 								</div>
 							</div>
 						</div>
@@ -442,19 +445,35 @@
 	</div>
 </div>
 
-<!-- Custom Theme JavaScript -->
-<script src="../../public/js/member.js"></script>
-<script src="../admin.js"></script>
+
 <!-- jQuery -->
 <script src="../../vendor/jquery/jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 <!-- Metis Menu Plugin JavaScript -->
 <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
+<!-- Moment js cdn --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 <!-- Morris Charts JavaScript -->
-<script src="../../vendor/raphael/raphael.min.js"></script>
+<!-- <script src="../../vendor/raphael/raphael.min.js"></script>
 <script src="../../vendor/morrisjs/morris.min.js"></script>
-<script src="../../data/morris-data.js"></script>
+<script src="../../data/morris-data.js"></script> -->
+<!-- Custom Theme JavaScript -->
+<script src="../../public/js/member.js"></script>
+<script src="../../admin.js"></script>
 
+<!-- Moment js cdn --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<script>
+
+ var NowMoment = moment();
+  
+  // display value of moment object in #displayMoment div
+  var eDisplayMoment = document.getElementById('today');
+  eDisplayMoment.innerHTML = NowMoment.format("MM.DD.YY");
+  var time = document.getElementById('time');
+  time.innerHTML = NowMoment.format("h:mm A");
+
+</script>
 </body>
 </html>

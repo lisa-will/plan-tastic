@@ -262,15 +262,16 @@
 		::::::::::::::::::::::::::::::-->
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default" id="today">
+				<div class="panel panel-default">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
-								<!--<i class="fa fa-comments fa-5x"></i>-->
+							<i class="fa fa-calendar-check-o fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-center">
 								<div>TODAY IS</div>
-								<div class="huge">1.28.17</div>
+								<div class="huge" id="today"></div>
+								<div class="large" id="time"></div>
 							</div>
 						</div>
 					</div>
@@ -434,6 +435,20 @@
 		<script src="../../admin.js"></script>
 		<script src="../../public/js/member.js"></script>
 		<script src="../../public/js/login.js"></script>
+
+		<!-- Moment js cdn --> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+		<script>
+
+ var NowMoment = moment();
+  
+  // display value of moment object in #displayMoment div
+  var eDisplayMoment = document.getElementById('today');
+  eDisplayMoment.innerHTML = NowMoment.format("MM.DD.YY");
+  var time = document.getElementById('time');
+  time.innerHTML = NowMoment.format("h:mm A");
+
+</script>
 
 	</body>
 </html>
