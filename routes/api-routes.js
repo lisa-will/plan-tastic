@@ -80,10 +80,10 @@ app.put("/calendar/update-when", function(req, res) {
 
 app.delete("/calendar/delete", function(req, res) {
 
-    db.calendar.destroy(req.body,
+    db.calendar.destroy(
       {
         where: {
-          id: req.params.id
+          id: req.body.id
         }
       })
     .then(function(dbcalendar) {

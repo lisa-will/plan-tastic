@@ -16,6 +16,19 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname + "/../views/calendar.html"));
   });
+app.get("/dashboard", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/dashboard.html"));
+  });
+app.get("/tasks", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/tasks.html"));
+  });
+app.get("/reminders", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/reminders.html"));
+  });
+app.get("/calendar-page", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/calendar.html"));
+  });
+
 
 };
 

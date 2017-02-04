@@ -19,13 +19,26 @@
 			font-size: 14px;
 			font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
 		}*/
-		#calendar
-		{
-			width: 900px;
-			margin: 0 auto;
-		}
+#wrap{
+	overflow: auto;
+}
+.animated_div{
+	-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+
+@media screen and (min-width: 480px){
+#calendar
+{
+	width: 900px;
+	margin: 0 auto;
+}
 #external-events{
     width: 10%;
     margin-right: 0;
     float: left;
+}
+.fc-event{
+	margin-bottom: 2px;
+}
 }

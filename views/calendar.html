@@ -36,11 +36,11 @@
 		<!--:::::::::::::::::::::
 			PAGE LOADER
 		:::::::::::::::::::::-->
-		<div id="loader-wrapper">
+		<!-- <div id="loader-wrapper">
 			<div id="loader"></div>
 			<div id="wrapper">
 			</div>
-		</div>
+		</div> -->
 		<!--:::::::::::::::::::::
 			NAVBAR STATIC TOP
 		:::::::::::::::::::::-->
@@ -53,9 +53,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">
-					<!-- ***** ADD LOGO ***** -->
-					<!--<img src="../../public/assets/css/img/plan-tastic.jpg"/>--> </a>
+				<a class="navbar-brand" href="dashboard"></a>
 				</div>
 				<!--:::::::::::::::::::::
 					NAVBAR - TOP LINKS
@@ -74,11 +72,12 @@
 						<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 					</li>
 					<li class="divider"></li>
-					<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+					<li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 				</li>
 			</ul>
 		</li>
 	</ul>
+
 	<!--:::::::::::::::::::::::
 		SIDE BAR - NAVBAR ** ADD JS HIDDEN
 	:::::::::::::::::::::::-->
@@ -88,25 +87,28 @@
 				
 				<!-- DASHBOARD -->
 				<li>
-					<a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+					<a href="dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
 				</li>
 				<!-- CALENDAR -->
 				<li>
-					<a href="calendar.html"><i class="fa fa-calendar fa-fw"></i> Calendar</a>
+					<a href="calendar"><i class="fa fa-calendar fa-fw"></i> Calendar</a>
 				</li>
 				<!-- TASKS -->
 				<li>
-					<a href="tasks.html"><i class="fa fa-tasks fa-fw"></i> Tasks</a>
+					<a href="tasks"><i class="fa fa-tasks fa-fw"></i> Tasks</a>
 				</li>
 				<!-- FOCUS -->
 				<li>
-					<a href="#"><i class="fa fa-bell fa-fw"></i> Reminders</a>
+					<a href="reminders"><i class="fa fa-bell fa-fw"></i> Reminders</a>
 				</li>
 				<!--CHARTS -->
 				<li>
-					<a href="#"><i class="fa fa-pie-chart fa-fw"></i> Charts</a>
+					<a href="charts"><i class="fa fa-pie-chart fa-fw"></i> Charts</a>
+				</li>
+				</ul>
 				</div>
 			</div>
+
 		</nav>
 		<!--::::::::::::::::::::::::::::::::::
 				PAGE - WRAPPER - DASHBOARD
@@ -118,7 +120,14 @@
 					<hr>
 				</div>
 			</div>
-			
+			<!-- ***** LOGO ***** -->
+			<!-- <div class="row" id="logo">
+			<div class="col-lg-3 col-md-6">
+			<img src="images/plan-tastic-logo.png"/></a>
+			</div>
+			</div>
+			</div> -->
+
 			<!--::::::::::::::::::::::::::
 				PANEL 1 - TODAY + TIME  // PULL TIME AND DATE // #today
 			::::::::::::::::::::::::::::::-->
@@ -137,7 +146,7 @@
 								</div>
 							</div>
 						</div>
-						<a href="#">
+						<a href="calendar-page">
 							<div class="panel-footer">
 								<span class="pull-left">VIEW MORE</span>
 								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -146,93 +155,121 @@
 						</a>
 					</div>
 				</div>
-				<!--:::::::::::::::::::::::
-					PANEL 2 - TO DO's // CREATE TO-DO TASK LIST // #todos
-				:::::::::::::::::::::::::::-->
-				<div class="col-lg-3 col-md-6">
-					<div class="panel panel-default" id="todos">
-						<div class="panel-heading">
-							<div class="row">
-								<div class="col-xs-3">
-									<i class="fa fa-edit fa-5x"></i>
-								</div>
-								<div class="col-xs-9 text-right">
-									<div class="huge">7</div>
-									<div>TO DO's</div>
-								</div>
-							</div>
-						</div>
-						<a href="#">
-							<div class="panel-footer">
-								<span class="pull-left">VIEW LIST</span>
-								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-								<div class="clearfix"></div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<!--:::::::::::::::::::::::::::::::::
-					PANEL 3 - POSITIVE AFFRIMATIONS // PULL https://theysaidso.com/api/
-					// #quotes // or #qod (QuoteOftheDay)
-				:::::::::::::::::::::::::::::::::::::-->
-				<div class="col-lg-3 col-md-6">
-					<div class="panel panel-default" id="quotes">
-						<div class="panel-heading">
-							<div class="row">
-								<div class="col-xs-3">
-									<i class="fa fa-heart-o fa-5x"></i>
-								</div>
-								<div class="col-xs-9 text-right">
-									<!-- # Q O D -->
-									<div id="quoteContainer">
-										<p></p>
-										<p id="quoteGenius"></p>
-									</div>
-									<!--end quoteContainer-->
-									
-									<a href="#"><div id="buttonContainer">
-										
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="panel-footer">
-							<div id="buttonContainer">
-								<span class="pull-left" id="quoteButton">QUOTE OF THE DAY</span>
-								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-								<div class="clearfix"></div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--::::::::::::::::::::::::::::::::
-				PANEL 4 - BULLHORN - REMINDERS // #reminders
-			::::::::::::::::::::::::::::::::::::-->
+			
+			<!--:::::::::::::::::::::::
+				PANEL 2 - TO DO's // CREATE TO-DO TASK LIST // #todos
+			:::::::::::::::::::::::::::-->
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default" id="reminders">
+				<div class="panel panel-default" id="todos">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
-								<i class="fa fa-bullhorn fa-5x"></i>
+								<i class="fa fa-edit fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-right">
-								<div class="huge">2</div>
-								<div>REMINDERS</div>
+								<div class="huge">7</div>
+								<div>TO DO's</div>
 							</div>
 						</div>
 					</div>
-					<a href="#">
+					<a href="tasks">
 						<div class="panel-footer">
-							<span class="pull-left">VIEW MORE</span>
+							<span class="pull-left">VIEW LIST</span>
 							<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 							<div class="clearfix"></div>
 						</div>
 					</a>
 				</div>
 			</div>
+			<!--:::::::::::::::::::::::::::::::::
+				PANEL 3 - POSITIVE AFFRIMATIONS 
+				// #quotes // or #qod (QuoteOftheDay)
+			:::::::::::::::::::::::::::::::::::::-->
+			<div class="col-lg-3 col-md-6">
+				<div class="panel panel-default" id="quotes">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-3">
+								<i class="fa fa-heart-o fa-5x"></i>
+							</div>
+							<div class="col-xs-9 text-right">
+								<!-- # Q O D -->
+								<div id="quoteContainer">
+									<p></p>
+									<p id="quoteGenius"></p>
+								</div>
+								<!--end quoteContainer-->
+								
+								<a href="#"><div id="buttonContainer">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<div id="buttonContainer">
+							<span class="pull-left" id="quoteButton">QUOTE OF THE DAY</span>
+							<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+							<div class="clearfix"></div>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
+		
+	</div>	
+		<!--::::::::::::::::::::::::::::::::
+			PANEL 4 - BULLHORN - REMINDERS // #reminders
+		::::::::::::::::::::::::::::::::::::-->
+		<div class="row">
+		<div class="col-lg-3 col-md-6">
+			
+				
+						<div id='wrap'>
+							<div id='external-events'>
+								<h4>Draggable Events</h4>
+								<div class='fc-event'>Work</div>
+								
+								<div class='fc-event'>Exercise</div>
+								
+								<div class='fc-event'>Sleep</div>
+								<div class='fc-event'>New Event</div>
+							
+							<i class="fa fa-trash-o fa-2x" id="trash" alt=""></i>
+							</div>
+							</div>
+							</div>
+							</div>
+							
+							
+							
+						
+<!--:::::::::::::::::::::::::::::::::
+		DRAGGABLE EVENTS 
+:::::::::::::::::::::::::::::::::::::-->
+		
+		<!-- <div class="col-lg-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-clock-o fa-fw"></i> 24 Hours
+				</div>
+				<div class="panel-body" id='wrap'>
+							<div id='external-events'>
+								<h4>Draggable Events</h4>
+								<div class='fc-event'>Work</div>
+								
+								<div class='fc-event'>Exercise</div>
+								
+								<div class='fc-event'>Sleep</div>
+								<div class='fc-event'>New Event</div>
+							<div class='animated_div'>
+							<i class="fa fa-trash-o fa-2x" id="trash" alt=""></i></div>
+							</div>
+					
+				</div>
+			</div>
+		</div>
+	 -->
+		
 		
 		<!--::::::::::::::::::::::::::
 			FULL CALENDAR HERE
@@ -240,19 +277,27 @@
 		
 		<!-- <div id="calendar"></div> -->
 		<div class="row">
-			<div class="jumbotron-fluid">
-				<div class="panel-panel-default">
+			<div class="col-lg-12">
+				<div class="panel-default">
 					<div class="panel-body">
+					<!--Calendar Wrap Starts--> 
 						<div id='wrap'>
 							<div id='external-events'>
 								<h4>Draggable Events</h4>
+								<div class='fc-event'>Work</div>
+								
+								<div class='fc-event'>Exercise</div>
+								
+								<div class='fc-event'>Sleep</div>
 								<div class='fc-event'>New Event</div>
-								<p>
-									<img src="/images/trashcan.png" id="trash" alt="">
-								</p>
-								<hr>
+
+							<div class='animated_div'>
+							<div class="fa fa-trash-o fa-2x" id="trash" alt=""></div>
 							</div>
-						</div>
+							</div>
+							
+							
+						
 						
 						<div id='calendar'></div>
 						<div style='clear:both'></div>
@@ -261,94 +306,97 @@
 				</div>
 			</div>
 		</div>
-		
-		
-		<!--::::::::::::::::::::::
-			NOTIFICATIONS PANEL
-		:::::::::::::::::::::::::::-->
-		<div class="row">
-			<div class="col-lg-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<i class="fa fa-bell fa-fw"></i> Notifications Panel
-					</div>
-					<div class="panel-body">
-						<div class="list-group">
-							<a href="#" class="list-group-item">
-								<i class="fa fa-comment fa-fw"></i> New Comment
-								<span class="pull-right text-muted small"><em>4 minutes ago</em>
-								</span>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="fa fa-twitter fa-fw"></i> 3 New Followers
-								<span class="pull-right text-muted small"><em>12 minutes ago</em>
-								</span>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="fa fa-envelope fa-fw"></i> Message Sent
-								<span class="pull-right text-muted small"><em>27 minutes ago</em>
-								</span>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="fa fa-tasks fa-fw"></i> New Task
-								<span class="pull-right text-muted small"><em>43 minutes ago</em>
-								</span>
-							</a>
-						</div>
-						<a href="#" class="btn btn-default btn-block">View All Alerts</a>
-					</div>
+	
+	</div>
+	
+	<!--::::::::::::::::::::::
+		NOTIFICATIONS PANEL
+	:::::::::::::::::::::::::::-->
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-bell fa-fw"></i> Notifications Panel
 				</div>
-			</div>
-			<!--:::::::::::::::::::::::::::::::::
-				24 HOUR DONUT PANEL // #donut
-			:::::::::::::::::::::::::::::::::::::-->
-			
-			<div class="col-lg-8">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<i class="fa fa-clock-o fa-fw"></i> 24 Hours
+				<div class="panel-body">
+					<div class="list-group">
+						<a href="#" class="list-group-item">
+							<i class="fa fa-comment fa-fw"></i> New Comment
+							<span class="pull-right text-muted small"><em>4 minutes ago</em>
+							</span>
+						</a>
+						<a href="#" class="list-group-item">
+							<i class="fa fa-twitter fa-fw"></i> 3 New Followers
+							<span class="pull-right text-muted small"><em>12 minutes ago</em>
+							</span>
+						</a>
+						<a href="#" class="list-group-item">
+							<i class="fa fa-envelope fa-fw"></i> Message Sent
+							<span class="pull-right text-muted small"><em>27 minutes ago</em>
+							</span>
+						</a>
+						<a href="#" class="list-group-item">
+							<i class="fa fa-tasks fa-fw"></i> New Task
+							<span class="pull-right text-muted small"><em>43 minutes ago</em>
+							</span>
+						</a>
 					</div>
-					<div class="panel-body" id="donut">
-						<!-- <img src="http://www.chartphp.com/wp-content/uploads/donutv3.png"/> -->
-						<div id="morris-donut-chart"></div>
-						<a href="#" class="btn btn-default btn-block">View Details</a>
-					</div>
+					<a href="#" class="btn btn-default btn-block">View All Alerts</a>
 				</div>
 			</div>
 		</div>
-		<!--Full Calendar jQuery -->
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script
-		src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-		integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-		crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+		<!--:::::::::::::::::::::::::::::::::
+			24 HOUR DONUT PANEL // #donut
+		:::::::::::::::::::::::::::::::::::::-->
 		
-		
-		<!-- Bootstrap Core JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
-		
-		<!-- Metis Menu Plugin JavaScript -->
-		<script src="/js/metisMenu/metisMenu.min.js"></script>
-		<!-- Morris Charts JavaScript -->
-		<!-- <script src="/js/raphael/raphael.min.js"></script>
-		<script src="/js/morrisjs/morris.min.js"></script>
-		<script src="/js/data/morris-data.js"></script> -->
-		<!-- Custom Theme JavaScript -->
-		<!-- <script src="/js/admin.js"></script>
-		<script src="/js/member.js"></script>
-		<script src="/js/login.js"></script> -->
-		<script src="/js/planner.js"></script>
-		<script src="/js/quotes.js"></script>
-		<script>
-		var NowMoment = moment();
-		
-		// display value of moment object in #displayMoment div
-		var eDisplayMoment = document.getElementById('today');
-		eDisplayMoment.innerHTML = NowMoment.format("MM.DD.YY");
-		var time = document.getElementById('time');
-		time.innerHTML = NowMoment.format("h:mm A");
-		</script>
-	</body>
+		<div class="col-lg-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-clock-o fa-fw"></i> 24 Hours
+				</div>
+				<div class="panel-body" id="donut">
+					<!-- <img src="http://www.chartphp.com/wp-content/uploads/donutv3.png"/> -->
+					<div id="morris-donut-chart"></div>
+					<a href="#" class="btn btn-default btn-block">View Details</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--Full Calendar jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script
+	src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+	integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+	
+	
+	<!-- Bootstrap Core JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+	
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="/js/metisMenu/metisMenu.min.js"></script>
+	<!-- Morris Charts JavaScript -->
+	<!-- <script src="/js/raphael/raphael.min.js"></script>
+	<script src="/js/morrisjs/morris.min.js"></script>
+	<script src="/js/data/morris-data.js"></script> -->
+	<!-- Custom Theme JavaScript -->
+	<!-- <script src="/js/admin.js"></script>
+	<script src="/js/member.js"></script>
+	<script src="/js/login.js"></script> -->
+	<script src="/js/planner.js"></script>
+	<script src="/js/quotes.js"></script>
+	<script>
+	var NowMoment = moment();
+	
+	// display value of moment object in #displayMoment div
+	var eDisplayMoment = document.getElementById('today');
+	eDisplayMoment.innerHTML = NowMoment.format("MM.DD.YY");
+	var time = document.getElementById('time');
+	time.innerHTML = NowMoment.format("h:mm A");
+	</script>
+</body>
 </html>

@@ -5,6 +5,7 @@
 		var zone = "-05:00";  //Florida time zone
 		var json_events; 
 
+function loadFromDatabase(){
 	$.ajax({
 		url: '/calendar',
         type: 'GET', // GET data
@@ -21,6 +22,9 @@
 
 console.log(json_events);
 	});
+}//end loadFromDatabase
+
+loadFromDatabase();
 
 	var currentMousePos = {
 	    x: -1,
@@ -79,6 +83,7 @@ function initCalendar(){
 			*/
 			selectable: true,
 			selectHelper: true,
+			eventOverlap: false,
 			eventReceive: function(event){
 				//if(json_events.length == 0) return;
 				var title = event.title;
@@ -102,6 +107,7 @@ function initCalendar(){
 		    		}
 		    	});
 				$('#calendar').fullCalendar('updateEvent',event);
+				  
 				//console.log(event);
 			},
 			eventDrop: function(event, delta, revertFunc) {  //change where and when an event occurs
@@ -123,27 +129,27 @@ function initCalendar(){
 					}
 				});
 		    },
-		    eventClick: function(event, jsEvent, view) {
-		    	console.log(event.id);
-		          var title = prompt('Event Title:', event.title, { buttons: { Ok: true, Cancel: false} });
-		          if (title){
-		              event.title = title;
-		              console.log('type=changetitle&title='+title+'&id='+event.id);
-		              $.ajax({
-				    		url: '/calendar/update-title',
-				    		data: 'title='+title+'&id='+event.id,
-				    		type: 'PUT',
-				    		dataType: 'json',
-				    		success: function(response){	
-				    			if(response.status == 'success')			    			
-		              				$('#calendar').fullCalendar('updateEvent',event);
-				    		},
-				    		error: function(e){
-				    			alert('Error processing your request: '+e.responseText);
-				    		}
-				    	});
-		          }
-			},
+		    // eventClick: function(event, jsEvent, view) {
+		    // 	console.log(event.id);
+		    //       var title = prompt('Event Title:', event.title, { buttons: { Ok: true, Cancel: false} });
+		    //       if (title){
+		    //           event.title = title;
+		    //           console.log('type=changetitle&title='+title+'&id='+event.id);
+		    //           $.ajax({
+			// 	    		url: '/calendar/update-title',
+			// 	    		data: 'title='+title+'&id='+event.id,
+			// 	    		type: 'PUT',
+			// 	    		dataType: 'json',
+			// 	    		success: function(response){	
+			// 	    			if(response.status == 'success')			    			
+		    //           				$('#calendar').fullCalendar('updateEvent',event);
+			// 	    		},
+			// 	    		error: function(e){
+			// 	    			alert('Error processing your request: '+e.responseText);
+			// 	    		}
+			// 	    	});
+		    //       }
+			// },
 			eventResize: function(event, delta, revertFunc) {
 				console.log(event);
 				var title = event.title;
@@ -163,44 +169,46 @@ function initCalendar(){
 						alert('Error processing your request: '+e.responseText);
 					}
 				});
-		    }//,
-			// eventDragStop: function (event, jsEvent, ui, view) {
-			//     if (isElemOverDiv()) {
-			//     	var con = confirm('Are you sure to delete this event permanently?');
-			//     	if(con == true) {
-			// 			$.ajax({
-			// 	    		url: '/delete',
-			// 	    		data: 'id='+event.id,
-			// 	    		type: 'DELETE',
-			// 	    		dataType: 'json',
-			// 	    		success: function(response){
-			// 	    			console.log(response);
-			// 	    			if(response.status == 'success'){
-			// 	    				$('#calendar').fullCalendar('removeEvents');
-            // 						getFreshEvents();
-            // 					}
-			// 	    		},
-			// 	    		error: function(e){	
-			// 	    			alert('Error processing your request: '+e.responseText);
-			// 	    		}
-			//     		});
-			// 		}   
-			// 	}
-			// }
+		    },
+			eventDragStop: function (event, jsEvent, ui, view) {
+			    if (isElemOverDiv()) {
+			    	var con = confirm('Are you sure to delete this event permanently?');
+			    	if(con == true) {
+						$.ajax({
+				    		url: '/calendar/delete',
+				    		data: 'id='+event.id,
+				    		type: 'DELETE',
+				    		dataType: 'json',
+				    		success: function(response){
+				    			console.log(response);
+				    			if(response.status == 'success'){
+				    				$('#calendar').fullCalendar('removeEvents');
+            						getFreshEvents();
+            					}
+				    		},
+				    		error: function(e){	
+				    			alert('Error processing your request: '+e.responseText);
+				    		}
+			    		});
+					}   
+				}
+			}
 		});
 }//init calendar
-	// function getFreshEvents(){
-	// 	$.ajax({
-	// 		url: 'process.php',
-	//         type: 'POST', // Send post data
-	//         data: 'type=fetch',
-	//         async: false,
-	//         success: function(s){
-	//         	freshevents = s;
-	//         }
-	// 	});
-	// 	$('#calendar').fullCalendar('addEventSource', JSON.parse(freshevents));
-	// }
+
+var freshEvents;
+
+	function getFreshEvents(){
+		$.ajax({
+		url: '/calendar',
+        type: 'GET', // GET data
+        async: false,
+        success: function(s){
+			freshEvents = s;
+        }
+		});
+		$('#calendar').fullCalendar('addEventSource', freshEvents);
+	}
 
 
 	function isElemOverDiv() {
